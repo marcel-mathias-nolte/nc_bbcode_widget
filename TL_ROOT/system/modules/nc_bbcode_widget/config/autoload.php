@@ -30,6 +30,9 @@ ClassLoader::addNamespaces(array
  */
 ClassLoader::addClasses(array
 (
+	// Classes
+	'bbParser'                => 'system/modules/nc_bbcode_widget/assets/bbParser.php',
+
 	// Forms
 	'NC\FormNcBBCodeEditor'   => 'system/modules/nc_bbcode_widget/forms/FormNcBBCodeEditor.php',
 
