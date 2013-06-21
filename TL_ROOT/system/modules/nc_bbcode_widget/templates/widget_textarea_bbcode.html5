@@ -1,0 +1,23 @@
+
+<h3><?php if ($this->strLabel != ''): ?><label for="<?php echo 'ctrl_' . $this->strId; ?>"<?php if ($this->strClass != ''): ?> class="<?php echo $this->strClass; ?>"<?php endif; ?>><?php if ($this->mandatory): ?><span class="invisible"><?php echo $GLOBALS['TL_LANG']['MSC']['mandatory']; ?></span><?php endif; ?><?php echo $this->strLabel; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?></label><?php endif; ?></h3>
+<?php if ($this->hasErrors): ?>
+	<p class="tl_error tl_tip"><?php echo implode('<br />', $this->arrErrors); ?></p>
+<?php endif; ?>
+<textarea 
+    name="<?php echo $this->strName; ?>" 
+    id="<?php echo 'ctrl_' . $this->strId; ?>" 
+    title="<?php echo $this->strLabel; ?>" 
+    <?php if ($this->blnShowLabelInside): ?>
+        onfocus="if (this.value == \'<?php echo $this->strLabel; ?>\') this.value = \'\';" 
+        onblur="if (this.value == \'\') this.value = \'<?php echo $this->strLabel; ?>\';" 
+    <?php endif; ?>
+    class="<?php echo $this->strClass; ?> tl_textarea" 
+    rows="<?php echo $this->intRows; ?>" 
+    cols="<?php echo $this->intCols; ?>"
+    <?php echo $this->strAttributes; ?>
+><?php echo $this->varValue; ?></textarea>
+<br /><br />
+<h3><label for="bbcode_preview" id="bbcode_preview_label"><?php echo $this->strPreviewLabel; ?></label></h3>
+<br /><br />
+<div id="bbcode_preview"></div>
+<br /><br />

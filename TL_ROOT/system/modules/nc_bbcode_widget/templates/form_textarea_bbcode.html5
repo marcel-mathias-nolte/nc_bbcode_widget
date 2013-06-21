@@ -1,0 +1,45 @@
+
+<?php if (!$this->tableless): ?>
+    <tr class="<?php echo $this->rowClass; ?>">
+		<?php if ($this->blnShowLabelInside): ?>
+	        <td class="col_0 col_first col_last" colspan="2">
+        <?php else: ?>
+    	    <td class="col_0 col_first">
+				<?php if ($this->strLabel != ''): ?>
+                	<label for="<?php echo 'ctrl_' . $this->strId; ?>"<?php if ($this->strClass != ''): ?> class="<?php echo $this->strClass; ?>"<?php endif; ?>>
+						<?php if ($this->mandatory): ?><span class="invisible"><?php echo $GLOBALS['TL_LANG']['MSC']['mandatory']; ?></span><?php endif; ?><?php echo $this->strLabel; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?>
+                    </label>
+				<?php endif; ?>
+            </td>
+        	<td class="col_1 col_last">
+        <?php endif; ?>
+		<?php if ($this->hasErrors): ?>
+            <p class="error"><?php echo implode('<br />', $this->arrErrors); ?></p>
+        <?php endif; ?>
+<?php elseif (!$this->blnShowLabelInside): ?>
+    <?php if ($this->strLabel != ''): ?>
+    	<label for="<?php echo 'ctrl_' . $this->strId; ?>"<?php if ($this->strClass != ''): ?> class="<?php echo $this->strClass; ?>"<?php endif; ?>>
+			<?php if ($this->mandatory): ?><span class="invisible"><?php echo $GLOBALS['TL_LANG']['MSC']['mandatory']; ?></span><?php endif; ?><?php echo $this->strLabel; ?><?php if ($this->mandatory): ?><span class="mandatory">*</span><?php endif; ?>
+        </label>
+	<?php endif; ?>
+<?php endif; ?>
+<textarea 
+    name="<?php echo $this->strName; ?>" 
+    id="<?php echo 'ctrl_' . $this->strId; ?>" 
+    title="<?php echo $this->strLabel; ?>" 
+    <?php if ($this->blnShowLabelInside): ?>
+        onfocus="if (this.value == \'<?php echo $this->strLabel; ?>\') this.value = \'\';" 
+        onblur="if (this.value == \'\') this.value = \'<?php echo $this->strLabel; ?>\';" 
+    <?php endif; ?>
+    class="<?php echo $this->strClass; ?>" 
+    rows="<?php echo $this->intRows; ?>" 
+    cols="<?php echo $this->intCols; ?>"
+    <?php echo $this->strAttributes; ?>
+><?php echo $this->varValue; ?></textarea>
+<br /><?php echo $this->Submit; ?><br />
+<label for="bbcode_preview" id="bbcode_preview_label"><?php echo $this->strPreviewLabel; ?></label>
+<div id="bbcode_preview"></div><br>
+<?php if (!$this->tableless): ?>
+		</td>
+    </tr>
+<?php endif; ?>
