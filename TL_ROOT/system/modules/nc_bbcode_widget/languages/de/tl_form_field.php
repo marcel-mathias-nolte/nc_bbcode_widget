@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -7,7 +7,7 @@
  * 
  * @package   NC BBCode Widgets
  * @author    Marcel Mathias Nolte
- * @copyright Marcel Mathias Nolte 2013
+ * @copyright Marcel Mathias Nolte 2015
  * @website	  https://www.noltecomputer.com
  * @license   <marcel.nolte@noltecomputer.de> wrote this file. As long as you retain this notice you
  *            can do whatever you want with this stuff. If we meet some day, and you think this stuff 
@@ -20,5 +20,3 @@
  * Form Fields
  */
 $GLOBALS['TL_LANG']['FFL']['bbcode'] = array('BBCode-Editor', 'Ein WYSIWYG-ähnlicher Editor, der BBCode erzeugt.');
-
-?>
